@@ -3,11 +3,12 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
 
     private Rigidbody2D rigidbody2D;
     private SpriteRenderer spriteRenderer;
-    // private Animator animator;
-    float horizontal;
+
+    float horizontal = 0f;
 
     public float runSpeed = 5f;
     private bool m_Grounded;
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        // animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         if (OnLandEvent == null) {
 		    OnLandEvent = new UnityEvent();
         }
@@ -31,17 +32,19 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw("Horizontal") * runSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
         if (horizontal < 0) {
             spriteRenderer.flipX = false;
         } else {
             spriteRenderer.flipX = true;
         }
-        // animator.SetFloat("horizontal", horizontal);
-        if (Input.GetKeyDown("space")) // && !animator.GetBool("jump"))
+
+        if (Input.GetKeyDown("space"))
         {
             rigidbody2D.AddForce(Vector2.up * 300);
-            // animator.SetBool("jump",true);
+            animator.SetBool("IsJumping", true);
             Debug.Log("space key was pressed");
         }
 
@@ -71,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
     public void Landed() {
-        // animator.SetBool("jump", false);
+        animator.SetBool("IsJumping", false);
     }
 
 }
