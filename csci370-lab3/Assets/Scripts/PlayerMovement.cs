@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
     public void Landed() {
+        createDust();
         animator.SetBool("IsJumping", false);
     }
 
