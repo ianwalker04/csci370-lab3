@@ -5,13 +5,18 @@ public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
 
+    public ParticleSystem dust;
+
     private Rigidbody2D rigidbody2D;
     private SpriteRenderer spriteRenderer;
 
-    float horizontal = 0f;
+    float horizontal;
 
     public float runSpeed = 5f;
     private bool m_Grounded;
+
+    public int dir = 1;
+    public int newDir = 1;
 
     public UnityEvent OnLandEvent;
 
@@ -31,18 +36,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        horizontal = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontal = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         if (horizontal < 0) {
             spriteRenderer.flipX = false;
-        } else {
+            newDir = 1;
+        } 
+        if (horizontal > 0) {
             spriteRenderer.flipX = true;
+            newDir = 0;
+        }
+
+        if (dir != newDir) { // Determines if direction changes, plays dust
+            dir = newDir;
+            createDust();
         }
 
         if (Input.GetKeyDown("space"))
         {
+            createDust();
             rigidbody2D.AddForce(Vector2.up * 300);
             animator.SetBool("IsJumping", true);
             Debug.Log("space key was pressed");
@@ -75,6 +88,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void Landed() {
         animator.SetBool("IsJumping", false);
+    }
+
+    void createDust() {
+        dust.Play();
     }
 
 }
