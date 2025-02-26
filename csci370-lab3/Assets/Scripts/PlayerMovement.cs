@@ -19,7 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public int newDir = 1;
 
     public UnityEvent OnLandEvent;
-    public AudioSource jumpSound;
+    [SerializeField] public AudioClip jumpSound;
+    [SerializeField] public AudioClip carrotSound;
+    AudioSource audio;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        jumpSound = GetComponent<AudioSource>();
+        audio = GetComponent<AudioSource>();
         if (OnLandEvent == null) {
 		    OnLandEvent = new UnityEvent();
         }
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             createDust();
             rigidbody2D.AddForce(Vector2.up * 300);
             animator.SetBool("IsJumping", true);
-            jumpSound.Play(0);
+            audio.PlayOneShot(jumpSound, 1);
             Debug.Log("space key was pressed");
         }
 
@@ -95,6 +97,14 @@ public class PlayerMovement : MonoBehaviour
 
     void createDust() {
         dust.Play();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Carrot")) {
+            GameManager.Instance.IncScore(1);
+            audio.PlayOneShot(carrotSound, 1);
+            Destroy(collision.gameObject);
+        }
     }
 
 }
