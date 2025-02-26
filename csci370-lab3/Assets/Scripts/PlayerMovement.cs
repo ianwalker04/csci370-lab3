@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public int newDir = 1;
 
     public UnityEvent OnLandEvent;
+    public AudioSource jumpSound;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        jumpSound = GetComponent<AudioSource>();
         if (OnLandEvent == null) {
 		    OnLandEvent = new UnityEvent();
         }
@@ -53,15 +55,15 @@ public class PlayerMovement : MonoBehaviour
             createDust();
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && m_Grounded)
         {
             createDust();
             rigidbody2D.AddForce(Vector2.up * 300);
             animator.SetBool("IsJumping", true);
+            jumpSound.Play(0);
             Debug.Log("space key was pressed");
         }
 
-        
     }
 
     void FixedUpdate()
