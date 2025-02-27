@@ -1289,9 +1289,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tileset: \nTBF\n\nMusic/SFX: \nTBF\n\nSprites: \nBunny Sprites - https://hredbird.itch.io/bunny-sprite-sheet\nVegetable
-    Sprites - https://quipinny.itch.io/pixelartvegetablespack\n\nFont: \nDonguri
-    Duel - ..."
+  m_text: "Tileset: \nhttps://kenney.nl/assets/pixel-platformer\n\nMusic/SFX: \nhttps://brackeysgames.itch.io/brackeys-platformer-bundle\n\nSprites:
+    \nBunny Sprites - https://hredbird.itch.io/bunny-sprite-sheet\nVegetable Sprites
+    - https://quipinny.itch.io/pixelartvegetablespack\n\nFont: \nDonguri Duel - https://hicchicc.github.io/00ff/"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc2c32c8c02c14851b53ee88ce58a145, type: 2}
   m_sharedMaterial: {fileID: -1623747543298897982, guid: dc2c32c8c02c14851b53ee88ce58a145, type: 2}
