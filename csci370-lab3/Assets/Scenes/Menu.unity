@@ -1060,7 +1060,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1620074900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2028876664}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: OpenTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1620074900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,7 +1301,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tileset: \nhttps://kenney.nl/assets/pixel-platformer\n\nMusic/SFX: \nhttps://brackeysgames.itch.io/brackeys-platformer-bundle\n\nSprites:
+  m_text: "Tileset: \nPixel Platformer - https://kenney.nl/assets/pixel-platformer\n\nBackgrond:
+    \nForest Lite - https://sanctumpixel.itch.io/forest-lite-pixel-art-tileset\n\nMusic/SFX:
+    \nBrackey's Platformer Bundle -https://brackeysgames.itch.io/brackeys-platformer-bundle\n\nSprites:
     \nBunny Sprites - https://hredbird.itch.io/bunny-sprite-sheet\nVegetable Sprites
     - https://quipinny.itch.io/pixelartvegetablespack\n\nFont: \nDonguri Duel - https://hicchicc.github.io/00ff/"
   m_isRightToLeft: 0
@@ -1318,8 +1332,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1531,7 +1545,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[Game Title]'
+  m_text: Carrot Crazy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc2c32c8c02c14851b53ee88ce58a145, type: 2}
   m_sharedMaterial: {fileID: -1623747543298897982, guid: dc2c32c8c02c14851b53ee88ce58a145, type: 2}
@@ -1564,7 +1578,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
