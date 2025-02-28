@@ -6,7 +6,7 @@ public class NPC : MonoBehaviour
     [SerializeField] int repeatStartPosition;
 
     public string npcName;
-    public DialogueAsset dialogueAsset;
+    // public DialogueAsset dialogueAsset;
 
     [HideInInspector]
     public int StartPosition {
