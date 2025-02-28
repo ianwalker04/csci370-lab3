@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+    
 
     public static GameManager Instance { get; private set; }
     int Carrots = 0;
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour {
         CarrotText.text = "Carrots: " + Carrots;
     }
 
+    
+
     void Start() {
         
     }
@@ -25,3 +28,4 @@ public class GameManager : MonoBehaviour {
     }
 
 }
+
