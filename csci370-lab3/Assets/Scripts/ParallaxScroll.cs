@@ -21,12 +21,6 @@ public class ParallaxScroll : MonoBehaviour
 
     private float lastCameraX;
 
-
-    void Awake()
-    {
-        //Setup();
-    }
-
     public void Setup()
     {
         cameraTransform = Camera.main.transform;
