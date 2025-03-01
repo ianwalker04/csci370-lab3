@@ -5,7 +5,7 @@ Name: Carrot Crazy
 
 Objective: The intent of this game is to let players make their way through a world using keyboard controls. They will have a goal of collecting 30 carrots.
 
-Narrative Structure: The player plays a "strapping your rabbit" and is asked by an elder rabbit to get carrots to feed them all. The player gets these carrots by jumping around in their game.
+Narrative Structure: The player plays a "strapping young rabbit" and is asked by an elder rabbit to get carrots to feed them all. The player gets these carrots by jumping around in their game.
 
 Mechanics: The player moves with "A," "D," and "Space." They can also pause the game with "Esc" and talk to rabbits with "E." There is a main menu that leads to the game, a tutorial, and the credits. Additionally, there are pause menus on both the game and the tutorial. Those two menus, as well as the normal dialogue, requires a mouse to navigate/move on to the next line. The player collects carrots by walking into/jumping onto them, and does not need to interact in a special way to pick them up. There is a bit of text in the upper left corner of the game and tutorial screens that indicates how many carrots you currently have.
 
