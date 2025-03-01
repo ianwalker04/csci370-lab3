@@ -1,26 +1,87 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 
 public class NPC : MonoBehaviour
 {
-    [SerializeField] bool firstInteraction = true;
-    [SerializeField] int repeatStartPosition;
+    public GameObject dialoguePanel;
+    public TextMeshProUGUI dialogueText;
+    public string[] dialogue;
+    private int index;
 
-    public string npcName;
-    // public DialogueAsset dialogueAsset;
+    public GameObject continueButton;
+    public float wordSpeed;
+    public bool isClose;
 
-    [HideInInspector]
-    public int StartPosition {
-        get
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && isClose)
         {
-            if (firstInteraction)
+            if (dialoguePanel.activeInHierarchy)
             {
-                firstInteraction = false;
-                return 0;
+                zeroText();
             }
             else
             {
-                return repeatStartPosition;
+                dialoguePanel.SetActive(true);
+                StartCoroutine(Typing());
             }
+        }
+
+        if (dialogueText.text == dialogue[index])
+        {
+            continueButton.SetActive(true);
+        }
+    }
+
+    public void zeroText()
+    {
+        dialogueText.text = "";
+        index = 0;
+        dialoguePanel.SetActive(false);
+    }
+
+    public IEnumerator Typing()
+    {
+        foreach (char c in dialogue[index].ToCharArray())
+        {
+            dialogueText.text +=c;
+            yield return new WaitForSeconds(wordSpeed);
+        }
+    }
+
+    public void NextLine()
+    {
+        continueButton.SetActive(false);
+
+        if (index < dialogue.Length - 1)
+        {
+            index++;
+            dialogueText.text = "";
+            StartCoroutine(Typing());
+        }
+        else
+        {
+            zeroText();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Rabbit"))
+        {
+            isClose = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Rabbit"))
+        {
+            isClose = false;
+            zeroText();
         }
     }
 }
