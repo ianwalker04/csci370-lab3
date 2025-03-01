@@ -15,7 +15,7 @@ Joys and Struggles:
 
 Fin - I had a very good time with this project, which I initially thought would not turn out to be the case. I really like how it turned out, both aesthetically and mechanically. I did still struggle with Unity, as it sometimes came up with errors than required me to completely delete and re-clone the project.
 
-Ian -
+Ian - Creating the main level was a little bit hard. In particular, it was hard to come up with unique sections for the level that didn't feel repetitive and were interesting to the player. But being able to playtest my work and see the level come together gradually was very rewarding and enjoyable.
 
 Assets:
 
@@ -35,4 +35,4 @@ Contributions:
 
 Fin - I put in all the assets (I did not find all of them), and I found the bunny and vegetable sprites. I made the animations for both the idle and moving rabbits. I also made the particle effects from movement. I then made the main menu and pause menus, as well as all of their attached functionality. Lastly, I also made the dialogue systems.
 
-Ian -
+Ian - I found some of the assets, namely the music/SFX, tileset, font, and parallax background. I got the camera, parallax background, and movement working. I also made the maps for both the tutorial and main level. 
